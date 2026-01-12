@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dolphins scores 1: 
+    <input type="text" name="dolphins-scores-1" id="dolphins-scores-1"> <br>
+    Dolphins scores 2: 
+    <input type="text" name="dolphins-scores-2" id="dolphins-scores-2"> <br>
+    Dolphins scores 3: 
+    <input type="text" name="dolphins-scores-3" id="dolphins-scores-3"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-1" id="koalas-scores-1"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-2" id="koalas-scores-2"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-3" id="koalas-scores-3"> <br>
+
+    <button id="btn-calculate">Find the winner</button> <br>
+
+    Comment:
+    <p id="comment"></p>
+
+</body>
+
+    <script>
+        var btnCal = document.getElementById('btn-calculate')
+
+        var calcAverage = (s1, s2, s3) => {
+            return (s1 + s2 + s3) / 3
+        }
+
+        var checkWinner = (avgDophins, avgKoalas) => {
+            if (avgDophins >= (avgKoalas * 2)) {
+                return `Dolphins wins (${avgDophins} vs ${avgKoalas})!`
+            } else if (avgKoalas >= (avgDophins * 2)) {
+                return `Koalas wins (${avgKoalas} vs ${avgDophins})!`
+            } else {
+                return `No team wins! (${avgDophins} vs ${avgKoalas})`
+            }
+        }
+
+        btnCal.onclick = () => {
+            var dScore1 = parseInt(document.getElementById('dolphins-scores-1').value)
+            var dScore2 = parseInt(document.getElementById('dolphins-scores-2').value)
+            var dScore3 = parseInt(document.getElementById('dolphins-scores-3').value)
+
+            var kScore1 = parseInt(document.getElementById('koalas-scores-1').value)
+            var kScore2 = parseInt(document.getElementById('koalas-scores-2').value)
+            var kScore3 = parseInt(document.getElementById('koalas-scores-3').value)
+
+            var comment = document.getElementById('comment')
+
+            var dAvgScore = calcAverage(dScore1, dScore2, dScore3)
+            var kAvgScore = calcAverage(kScore1, kScore2, kScore3)
+
+            var winnerText = checkWinner(dAvgScore, kAvgScore)
+            comment.innerHTML = winnerText
+        }
+
+
+    </script>
+</html>
