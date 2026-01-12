@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Mark mass: 
+    <input type="text" name="mark-mass" id="mark-mass"> <br>
+    Mark height: 
+    <input type="text" name="mark-height" id="mark-height"> <br>
+
+    John mass: 
+    <input type="text" name="john-mass" id="john-mass"> <br>
+    John height: 
+    <input type="text" name="john-height" id="john-height"> <br>
+
+    <button id="btn-calculate">Calculate</button> <br>
+
+    Mark BMI: 
+    <input type="text" name="mark-bmi" id="mark-bmi" disabled > <br>
+    John BMI: 
+    <input type="text" name="john-height" id="john-bmi" disabled > <br>
+
+</body>
+
+    <script>
+        var btnCal = document.getElementById('btn-calculate')
+
+        btnCal.onclick = () => {
+            var markMass = document.getElementById('mark-mass').value
+            var markHeght = document.getElementById('mark-height').value
+
+            var johnMass = document.getElementById('john-mass').value
+            var johnHeight = document.getElementById('john-height').value
+
+            var markBMIInput = document.getElementById('mark-bmi')
+            var johnBMIInput = document.getElementById('john-bmi')
+
+            var markBMI = parseFloat(markMass) / (parseFloat(markHeght) * parseFloat(markHeght))
+            var johnBMI = parseFloat(johnMass) / (parseFloat(johnHeight) * parseFloat(johnHeight))
+
+            markBMIInput.value = markBMI
+            johnBMIInput.value = johnBMI
+        }
+
+        
+    </script>
+</html>
