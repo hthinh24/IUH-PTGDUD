@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    bill:
+    <input type="text" name="bill" id="bill"> <br>
+
+    tips:
+    <p id="tips"></p>
+
+    <button id="btn-find-tips">Calculate tips!</button> <br>
+    
+</body>
+
+<script>
+    var btnCal = document.getElementById('btn-find-tips')
+
+    btnCal.onclick = () => {
+        var bill = parseInt(document.getElementById('bill').value)
+        var tipsLabel = document.getElementById('tips')
+
+        var tips = (50 <= bill && bill <= 300) ? bill * 0.15 : bill * 0.2
+        tipsLabel.innerHTML = tips
+    }
+
+</script>
+
+</html>
