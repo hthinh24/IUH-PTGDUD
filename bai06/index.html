@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn-result">Click here to print result!</button> <br>
+    <p id="p-print"></p>
+    
+</body>
+
+<script>
+    var btnCal = document.getElementById('btn-result')
+
+    var calTips = (bill) => {
+        return (50 <= bill && bill <= 300) ? bill * 0.15 : bill * 0.2
+    }
+
+    btnCal.onclick = () => {
+        var p = document.getElementById('p-print')
+        
+        var bills = [125, 555, 44]
+        var tips = bills.map(bill => calTips(bill))
+        var totals = bills.map(bill => bill + calTips(bill))
+
+        console.log(tips)
+        console.log(totals)
+
+        p.innerHTML = `Tips: ${tips} - Total: ${totals}`
+    }
+
+</script>
+
+</html>
