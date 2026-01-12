@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dolphins scores 1: 
+    <input type="text" name="dolphins-scores-1" id="dolphins-scores-1"> <br>
+    Dolphins scores 2: 
+    <input type="text" name="dolphins-scores-2" id="dolphins-scores-2"> <br>
+    Dolphins scores 3: 
+    <input type="text" name="dolphins-scores-3" id="dolphins-scores-3"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-1" id="koalas-scores-1"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-2" id="koalas-scores-2"> <br>
+    Koalas scores 1: 
+    <input type="text" name="koalas-scores-3" id="koalas-scores-3"> <br>
+
+    <button id="btn-calculate">Find the winner</button> <br>
+
+    Comment:
+    <p id="comment"></p>
+
+</body>
+
+    <script>
+        var btnCal = document.getElementById('btn-calculate')
+
+        btnCal.onclick = () => {
+            var dScore1 = parseInt(document.getElementById('dolphins-scores-1').value)
+            var dScore2 = parseInt(document.getElementById('dolphins-scores-2').value)
+            var dScore3 = parseInt(document.getElementById('dolphins-scores-3').value)
+
+            var kScore1 = parseInt(document.getElementById('koalas-scores-1').value)
+            var kScore2 = parseInt(document.getElementById('koalas-scores-2').value)
+            var kScore3 = parseInt(document.getElementById('koalas-scores-3').value)
+
+            var comment = document.getElementById('comment')
+
+            var dAvgScore = (dScore1 + dScore2 + dScore3) / 3
+            var kAvgScore = (kScore1 + kScore2 + kScore3) / 3
+
+            console.log("dScore:" + dAvgScore)
+            console.log("kAvgScore:" + kAvgScore)
+
+            if (dAvgScore < 100 && kAvgScore < 100) {
+                comment.innerHTML = "No teams win the trophy lmao:)"
+                return
+            }
+
+            if (dAvgScore == kAvgScore) {
+                comment.innerHTML = "Draw, both team have same score!"
+            } else if (dAvgScore > kAvgScore) {
+                comment.innerHTML = "Dolphins team win the trophy!"
+            } else {
+                comment.innerHTML = "Koalas team win the trophy!"
+            }
+        }
+
+        
+    </script>
+</html>
