@@ -4,19 +4,27 @@
     height: 400px;
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.product-card:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
 .product-image {
     height: 50%;
     overflow: hidden;
+    padding: 2px;
 }
 
 .img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 .product-content {
@@ -32,9 +40,11 @@
 }
 
 .product-button {
-    background-color: lightblue;
-    font-size: 18px;
-    font-weight: bold;
-    color: white
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
 }
 
