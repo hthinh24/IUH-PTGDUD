@@ -1,0 +1,40 @@
+
+.product-card {
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+
+}
+
+.product-image {
+    height: 50%;
+    overflow: hidden;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 5px;
+}
+
+.product-title {
+
+}
+
+.product-price {
+
+}
+
+.product-button {
+    background-color: lightblue;
+    font-size: 18px;
+    font-weight: bold;
+    color: white
+}
+
